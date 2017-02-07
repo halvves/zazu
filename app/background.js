@@ -15,13 +15,18 @@ const about = require('./about')
 
 globalEmitter.on('showDebug', (message) => {
   logger.log('info', 'opening debug page')
-  windowHelper('debug', {
-    width: 600,
-    height: 400,
-    resizable: true,
-    title: 'Debug Zazu',
+  const debug = windowHelper('debug', {
+    width: 700,
+    height: 500,
+    frame: false,
+    resizable: false,
+    autoResize: true,
+    alwaysOnTop: false, // maybe?
+    skipTaskbar: true,
+    title: 'Large Type',
     url: path.join('file://', __dirname, '/debug.html'),
   })
+  debug.webContents.toggleDevTools({mode: 'undocked'})
 })
 
 globalEmitter.on('showAbout', (message) => {

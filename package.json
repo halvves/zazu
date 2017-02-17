@@ -40,5 +40,8 @@
     "lint": "eslint .",
     "install-native": "node ./tasks/install_native_module",
     "docs:publish": "gulp ghpages"
+  },
+  "dependencies": {
+    "node-lipsum": "^1.0.1"
   }
 }

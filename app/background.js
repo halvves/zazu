@@ -14,8 +14,8 @@ const createMenu = require('./helpers/menu')
 const about = require('./about')
 
 globalEmitter.on('showDebug', (message) => {
-  logger.log('info', 'opening debug page')
-  const debug = windowHelper('debug', {
+  windowHelper('debug', {
+    show: false,
     width: 700,
     height: 500,
     frame: false,
@@ -26,7 +26,7 @@ globalEmitter.on('showDebug', (message) => {
     title: 'Large Type',
     url: path.join('file://', __dirname, '/debug.html'),
   })
-  debug.webContents.toggleDevTools({mode: 'undocked'})
+  // debug.webContents.toggleDevTools({mode: 'undocked'})
 })
 
 globalEmitter.on('showAbout', (message) => {
